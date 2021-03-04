@@ -1,4 +1,4 @@
-package com.fb.faithfulblendzbe.application;
+package com.fb.faithfulblendzbe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
