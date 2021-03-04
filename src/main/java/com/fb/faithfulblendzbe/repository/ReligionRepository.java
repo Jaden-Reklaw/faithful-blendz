@@ -5,4 +5,6 @@ import com.fb.faithfulblendzbe.domain.VolunteerEvent;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ReligionRepository extends CrudRepository<Religion, Integer> {
+
+    Religion findByReligionName(String name);
 }

@@ -5,4 +5,6 @@ import com.fb.faithfulblendzbe.domain.VolunteerEvent;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
+
+    Contact findContactByName(String name);
 }
