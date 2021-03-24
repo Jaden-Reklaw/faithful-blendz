@@ -1,28 +1,30 @@
 package com.fb.faithfulblendzbe.model;
 
 import javax.persistence.*;
-import java.util.Set;
-
 
 @Entity
-@Table(name = "religions")
 public class Religion {
-
+    //region Properties
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ReligionId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Version
     private Integer version;
 
-    private String religionName;
+    private String religion_name;
+    //endregion
 
-    @OneToMany(mappedBy = "religion")
-    private Set<Sect> sects;
+    //region Constructors
 
-    public Religion(){}
+    public Religion(String religion_name) {
+        this.religion_name = religion_name;
+    }
 
+    public Religion() {}
+    //endregion
+
+    //region Setters and Getters
     public Integer getId() {
         return id;
     }
@@ -31,27 +33,23 @@ public class Religion {
         this.id = id;
     }
 
-    public Integer getVersion() {
-        return version;
+    public String getReligion_name() {
+        return religion_name;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
+    public void setReligion_name(String religion_name) {
+        this.religion_name = religion_name;
     }
+    //endregion
 
-    public String getReligionName() {
-        return religionName;
+    //region custom Methods
+    @Override
+    public String toString() {
+        return "Religion{" +
+                "id=" + id +
+                ", religion_name='" + religion_name + '\'' +
+                '}';
     }
-
-    public void setReligionName(String religionName) {
-        this.religionName = religionName;
-    }
-
-    public Set<Sect> getSects() {
-        return sects;
-    }
-
-    public void setSects(Set<Sect> sects) {
-        this.sects = sects;
-    }
+    //endregion
 }
+
