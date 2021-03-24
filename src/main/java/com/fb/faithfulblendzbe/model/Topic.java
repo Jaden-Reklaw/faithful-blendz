@@ -1,11 +1,9 @@
 package com.fb.faithfulblendzbe.model;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
 @Entity
 @Table(name = "topic")
 public class Topic {
@@ -26,4 +24,36 @@ public class Topic {
     private Set<Lesson> lesson = new HashSet<Lesson>();
 
     public Topic(){}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public String getTopicName() {
+        return topicName;
+    }
+
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
+
+    public Set<Lesson> getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(Set<Lesson> lesson) {
+        this.lesson = lesson;
+    }
 }

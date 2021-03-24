@@ -1,10 +1,8 @@
 package com.fb.faithfulblendzbe.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
-@Data
+
 @Entity
 @Table(name = "email")
 public class Email {
@@ -24,4 +22,43 @@ public class Email {
 
     public Email(){}
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public String getEmailName() {
+        return emailName;
+    }
+
+    public void setEmailName(String emailName) {
+        this.emailName = emailName;
+    }
+
+    public String getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(String emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

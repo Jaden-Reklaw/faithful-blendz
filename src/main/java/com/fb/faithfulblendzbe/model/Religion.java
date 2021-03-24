@@ -1,10 +1,9 @@
 package com.fb.faithfulblendzbe.model;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+
 @Entity
 @Table(name = "religions")
 public class Religion {
@@ -23,4 +22,36 @@ public class Religion {
     private Set<Sect> sects;
 
     public Religion(){}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public String getReligionName() {
+        return religionName;
+    }
+
+    public void setReligionName(String religionName) {
+        this.religionName = religionName;
+    }
+
+    public Set<Sect> getSects() {
+        return sects;
+    }
+
+    public void setSects(Set<Sect> sects) {
+        this.sects = sects;
+    }
 }
