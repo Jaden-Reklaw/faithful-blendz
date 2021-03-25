@@ -99,7 +99,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.html",
                         "/**/*.css",
                         "/**/*.js")
-                .permitAll().antMatchers("/api/v1/auth/**", "/oauth2/**", "/api/v1/religion/**").permitAll().anyRequest().authenticated()
+                .permitAll().antMatchers("/api/v1/auth/**", "/oauth2/**", "/api/v1/religion/**", "/h2-console/**").permitAll().anyRequest().authenticated()
                 .and().oauth2Login().authorizationEndpoint().baseUri("/oauth2/authorize").authorizationRequestRepository(cookieAuthorizationRequestRepository())
                 .and().redirectionEndpoint().baseUri("/oauth2/callback/*")
                 .and().userInfoEndpoint().userService(customOAuth2UserService)
@@ -107,5 +107,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Add our custom Token based authentication filter
         http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+
+        //Needed in order for the H2 Database to Display
+        http.headers().frameOptions().sameOrigin();
     }
 }
