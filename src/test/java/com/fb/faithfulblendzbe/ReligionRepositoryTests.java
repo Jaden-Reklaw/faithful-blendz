@@ -1,7 +1,6 @@
 package com.fb.faithfulblendzbe;
 
 import com.fb.faithfulblendzbe.configuration.RepositoryConfiguration;
-import com.fb.faithfulblendzbe.model.Organization;
 import com.fb.faithfulblendzbe.model.Religion;
 import com.fb.faithfulblendzbe.repository.ReligionRepository;
 import org.junit.Test;
@@ -62,8 +61,8 @@ public class ReligionRepositoryTests {
         for (Religion religion : rel) {
             assertNotNull(religion.getId());
         }
-        Iterable<Religion> fetchedOrgs = religionRepository.findAll();
-        fetchedOrgs.forEach(religion -> {
+        Iterable<Religion> fetchedReligions = religionRepository.findAll();
+        fetchedReligions.forEach(religion -> {
             assertNotNull(religionRepository.findById(religion.getId()));
         });
     }
