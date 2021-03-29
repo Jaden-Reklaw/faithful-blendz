@@ -1,6 +1,7 @@
 package com.fb.faithfulblendzbe.repositories;
 
 import com.fb.faithfulblendzbe.configuration.RepositoryConfiguration;
+import com.fb.faithfulblendzbe.model.Organization;
 import com.fb.faithfulblendzbe.model.Topic;
 import com.fb.faithfulblendzbe.repository.TopicRepository;
 import org.junit.Test;
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TopicRepositoryTest {
     @Autowired
     TopicRepository topicRepository;
+
 
     @Test
     public void testSaveAndRetrieveTopic() {
@@ -55,7 +57,7 @@ public class TopicRepositoryTest {
         });
         topicRepository.saveAll(topics);
 
-        topicRepository.findAll().forEach(topic -> assertNotNull(topicRepository.findById(topic.getId())));
+        topicRepository.findAll().forEach(topic -> assertNotNull(topicRepository.findById(topic.getId()).get()));
 
     }
 
