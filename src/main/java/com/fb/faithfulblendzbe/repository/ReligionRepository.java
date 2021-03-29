@@ -6,3 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ReligionRepository extends CrudRepository<Religion, Integer> {
 }
+
