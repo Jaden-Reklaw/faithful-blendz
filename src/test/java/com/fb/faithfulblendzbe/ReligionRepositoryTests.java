@@ -37,7 +37,7 @@ public class ReligionRepositoryTests {
     }
 
     @Test
-    public void testDeleteOrganization() {
+    public void testDeleteReligion() {
         Religion religion = new Religion();
         religion.setReligion_name("Holy Name Church");
         religionRepository.save(religion);
