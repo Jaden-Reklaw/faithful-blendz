@@ -28,6 +28,7 @@ public class Lesson {
     private Organization organization;
 
 
+
     public Lesson(){}
 
     public Integer getId() {
