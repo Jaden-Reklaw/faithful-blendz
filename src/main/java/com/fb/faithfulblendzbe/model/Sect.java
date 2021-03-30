@@ -19,7 +19,7 @@ public class Sect {
     private String sectName;
 
     @ManyToOne
-    @JoinColumn(name = "religion_id", nullable = false)
+    @JoinColumn(name = "religion_id")
     private Religion religion;
 
     @ManyToMany(mappedBy = "sect")
