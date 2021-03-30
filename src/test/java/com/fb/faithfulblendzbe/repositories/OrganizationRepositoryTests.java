@@ -1,4 +1,4 @@
-package com.fb.faithfulblendzbe;
+package com.fb.faithfulblendzbe.repositories;
 
 import com.fb.faithfulblendzbe.configuration.RepositoryConfiguration;
 import com.fb.faithfulblendzbe.model.Organization;
